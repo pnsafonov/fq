@@ -120,8 +120,9 @@ var (
 	ProtobufWidevine   = &decode.Group{Name: "protobuf_widevine"}
 	PsshPlayready      = &decode.Group{Name: "pssh_playready"}
 	Rtmp               = &decode.Group{Name: "rtmp"}
-	SllPacket          = &decode.Group{Name: "sll_packet"}
 	Sll2Packet         = &decode.Group{Name: "sll2_packet"}
+	SllPacket          = &decode.Group{Name: "sll_packet"}
+	Sqlite3            = &decode.Group{Name: "sqlite3"}
 	Tar                = &decode.Group{Name: "tar"}
 	TcpSegment         = &decode.Group{Name: "tcp_segment"}
 	Tiff               = &decode.Group{Name: "tiff"}

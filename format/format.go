@@ -114,14 +114,15 @@ var (
 	OpusPacket         = &decode.Group{Name: "opus_packet"}
 	Pcap               = &decode.Group{Name: "pcap"}
 	Pcapng             = &decode.Group{Name: "pcapng"}
+	Pdf                = &decode.Group{Name: "pdf"}
 	Png                = &decode.Group{Name: "png"}
 	ProresFrame        = &decode.Group{Name: "prores_frame"}
 	Protobuf           = &decode.Group{Name: "protobuf"}
 	ProtobufWidevine   = &decode.Group{Name: "protobuf_widevine"}
 	PsshPlayready      = &decode.Group{Name: "pssh_playready"}
 	Rtmp               = &decode.Group{Name: "rtmp"}
-	SllPacket          = &decode.Group{Name: "sll_packet"}
 	Sll2Packet         = &decode.Group{Name: "sll2_packet"}
+	SllPacket          = &decode.Group{Name: "sll_packet"}
 	Tar                = &decode.Group{Name: "tar"}
 	TcpSegment         = &decode.Group{Name: "tcp_segment"}
 	Tiff               = &decode.Group{Name: "tiff"}

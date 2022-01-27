@@ -1,0 +1,12 @@
+$ fq -d kaitai -o source=@formats/switch_manual_str.ksy "d,tovalue" src/switch_opcodes.bin
+{
+  "opcodes.size": 4,
+  "opcodes[0].body.as<switch_manual_str::opcode::strval>.value": "foobar",
+  "opcodes[0].code": "S",
+  "opcodes[1].body.as<switch_manual_str::opcode::intval>.value": 66,
+  "opcodes[1].code": "I",
+  "opcodes[2].body.as<switch_manual_str::opcode::intval>.value": 55,
+  "opcodes[2].code": "I",
+  "opcodes[3].body.as<switch_manual_str::opcode::strval>.value": "\"\"",
+  "opcodes[3].code": "S"
+}

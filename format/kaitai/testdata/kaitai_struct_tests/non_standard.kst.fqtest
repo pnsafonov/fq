@@ -1,0 +1,4 @@
+$ fq -d kaitai -o source=@formats/non_standard.ksy "d,tovalue" src/fixed_struct.bin
+{
+  "foo": 80
+}

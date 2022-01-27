@@ -1,0 +1,5 @@
+$ fq -d kaitai -o source=@formats/enum_deep_literals.ksy "d,tovalue" src/enum_0.bin
+{
+  "is_pet_1_ok": true,
+  "is_pet_2_ok": true
+}

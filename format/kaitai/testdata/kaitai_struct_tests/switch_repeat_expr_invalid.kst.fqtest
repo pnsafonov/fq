@@ -1,0 +1,16 @@
+$ fq -d kaitai -o source=@formats/switch_repeat_expr_invalid.ksy "d,tovalue" src/switch_tlv.bin
+{
+  "body[0].as<bytes>": [
+    83,
+    116,
+    117,
+    102,
+    102,
+    0,
+    77,
+    101,
+    0
+  ],
+  "code": 17,
+  "size": 9
+}

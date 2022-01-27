@@ -1,0 +1,5 @@
+$ fq -d kaitai -o source=@formats/debug_switch_user.ksy "d,tovalue" src/nav_parent_switch.bin
+{
+  "code": 1,
+  "data.as<debug_switch_user::one>.val": -190
+}

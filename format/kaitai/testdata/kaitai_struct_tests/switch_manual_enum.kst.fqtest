@@ -1,0 +1,12 @@
+$ fq -d kaitai -o source=@formats/switch_manual_enum.ksy "d,tovalue" src/switch_opcodes.bin
+{
+  "opcodes.size": 4,
+  "opcodes[0].body.as<switch_manual_enum::opcode::strval>.value": "foobar",
+  "opcodes[0].code": "switch_manual_enum::opcode::code_enum::strval",
+  "opcodes[1].body.as<switch_manual_enum::opcode::intval>.value": 66,
+  "opcodes[1].code": "switch_manual_enum::opcode::code_enum::intval",
+  "opcodes[2].body.as<switch_manual_enum::opcode::intval>.value": 55,
+  "opcodes[2].code": "switch_manual_enum::opcode::code_enum::intval",
+  "opcodes[3].body.as<switch_manual_enum::opcode::strval>.value": "\"\"",
+  "opcodes[3].code": "switch_manual_enum::opcode::code_enum::strval"
+}

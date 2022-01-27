@@ -1,0 +1,7 @@
+$ fq -d kaitai -o source=@formats/recursive_one.ksy "d,tovalue" src/fixed_struct.bin
+{
+  "next.as<recursive_one>.next.as<recursive_one>.next.as<recursive_one::fini>.finisher": 11595,
+  "next.as<recursive_one>.next.as<recursive_one>.one": 67,
+  "next.as<recursive_one>.one": 65,
+  "one": 80
+}

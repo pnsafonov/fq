@@ -1,0 +1,12 @@
+$ fq -d kaitai -o source=@formats/nav_parent_false.ksy "d,tovalue" src/nav_parent_codes.bin
+{
+  "child_size": 3,
+  "element_a.bar.foo.code": 66,
+  "element_a.foo.code": 73,
+  "element_a.foo.more": [
+    49,
+    50,
+    51
+  ],
+  "element_b.foo.code": 98
+}

@@ -1,0 +1,13 @@
+$ fq -d kaitai -o source=@formats/switch_manual_int_size.ksy "d,tovalue" src/switch_tlv.bin
+{
+  "chunks.size": 4,
+  "chunks[0].body.as<switch_manual_int_size::chunk::chunk_meta>.author": "Me",
+  "chunks[0].body.as<switch_manual_int_size::chunk::chunk_meta>.title": "Stuff",
+  "chunks[0].code": 17,
+  "chunks[1].body.as<switch_manual_int_size::chunk::chunk_dir>.entries": "['AAAA', 'BBBB', 'CCCC']",
+  "chunks[1].code": 34,
+  "chunks[2].body.as<bytes>": "[0x10, 0x20, 0x30, 0x40, 0x50, 0x60, 0x70, 0x80].as<bytes>",
+  "chunks[2].code": 51,
+  "chunks[3].body.as<bytes>": "[].as<bytes>",
+  "chunks[3].code": 255
+}

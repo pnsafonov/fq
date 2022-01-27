@@ -1,0 +1,7 @@
+$ fq -d kaitai -o source=@formats/process_coerce_usertype2.ksy "d,tovalue" src/process_coerce_bytes.bin
+{
+  "records[0].buf.value": 1094795585,
+  "records[0].flag": 0,
+  "records[1].buf.value": 1111638594,
+  "records[1].flag": 1
+}

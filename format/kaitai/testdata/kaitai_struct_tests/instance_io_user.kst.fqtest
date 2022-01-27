@@ -1,0 +1,7 @@
+$ fq -d kaitai -o source=@formats/instance_io_user.ksy "d,tovalue" src/instance_io.bin
+{
+  "entries[0].name": "the",
+  "entries[1].name": "rainy",
+  "entries[2].name": "day it is",
+  "qty_entries": 3
+}

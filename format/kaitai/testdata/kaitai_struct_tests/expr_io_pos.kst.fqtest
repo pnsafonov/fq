@@ -1,0 +1,20 @@
+$ fq -d kaitai -o source=@formats/expr_io_pos.ksy "d,tovalue" src/expr_io_pos.bin
+{
+  "substream1.body": [
+    17,
+    34,
+    51,
+    68
+  ],
+  "substream1.my_str": "CURIOSITY",
+  "substream1.number": 66,
+  "substream2.body": [
+    97,
+    32,
+    99,
+    97,
+    116
+  ],
+  "substream2.my_str": "KILLED",
+  "substream2.number": 103
+}

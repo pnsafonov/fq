@@ -1,0 +1,12 @@
+$ fq -d kaitai -o source=@formats/switch_manual_int_else.ksy "d,tovalue" src/switch_opcodes2.bin
+{
+  "opcodes.size": 4,
+  "opcodes[0].body.as<switch_manual_int_else::opcode::strval>.value": "foo",
+  "opcodes[0].code": 83,
+  "opcodes[1].body.as<switch_manual_int_else::opcode::noneval>.filler": 66,
+  "opcodes[1].code": 88,
+  "opcodes[2].body.as<switch_manual_int_else::opcode::noneval>.filler": 51966,
+  "opcodes[2].code": 89,
+  "opcodes[3].body.as<switch_manual_int_else::opcode::intval>.value": 7,
+  "opcodes[3].code": 73
+}

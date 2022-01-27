@@ -1,0 +1,10 @@
+$ fq -d kaitai -o source=@formats/enum_if.ksy "d,tovalue" src/if_struct.bin
+{
+  "op1.arg_str.str": "foo",
+  "op1.opcode": "enum_if::opcodes::a_string",
+  "op2.arg_tuple.num1": 66,
+  "op2.arg_tuple.num2": 67,
+  "op2.opcode": "enum_if::opcodes::a_tuple",
+  "op3.arg_str.str": "bar",
+  "op3.opcode": "enum_if::opcodes::a_string"
+}

@@ -1,0 +1,8 @@
+$ fq -d kaitai -o source=@formats/nav_root.ksy "d,tovalue" src/nav.bin
+{
+  "header.filename_len": 8,
+  "header.qty_entries": 2,
+  "index.entries.size": 2,
+  "index.entries[0].filename": "FIRST___",
+  "index.entries[1].filename": "SECOND__"
+}

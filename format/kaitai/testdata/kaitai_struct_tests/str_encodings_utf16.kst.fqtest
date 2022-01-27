@@ -1,0 +1,9 @@
+$ fq -d kaitai -o source=@formats/str_encodings_utf16.ksy "d,tovalue" src/str_encodings_utf16.bin
+{
+  "be_bom_removed.bom": 65279,
+  "be_bom_removed.str": "こんにちは",
+  "le_bom_removed.bom": 65279,
+  "le_bom_removed.str": "こんにちは",
+  "len_be": 12,
+  "len_le": 12
+}

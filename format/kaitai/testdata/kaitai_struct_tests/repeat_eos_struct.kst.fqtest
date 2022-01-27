@@ -1,0 +1,8 @@
+$ fq -d kaitai -o source=@formats/repeat_eos_struct.ksy "d,tovalue" src/repeat_eos_struct.bin
+{
+  "chunks.size": 2,
+  "chunks[0].len": 66,
+  "chunks[0].offset": 0,
+  "chunks[1].len": 2069,
+  "chunks[1].offset": 66
+}

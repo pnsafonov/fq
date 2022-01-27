@@ -1,0 +1,20 @@
+$ fq -d kaitai -o source=@formats/nested_same_name2.ksy "d,tovalue" src/nested_same_name2.bin
+{
+  "dummy.dummy_size": 3,
+  "dummy.foo.data2": [
+    34,
+    34,
+    34,
+    34,
+    34,
+    34
+  ],
+  "main_data.foo.data1": [
+    17,
+    17,
+    17,
+    17
+  ],
+  "main_data.main_size": 2,
+  "version": 66
+}

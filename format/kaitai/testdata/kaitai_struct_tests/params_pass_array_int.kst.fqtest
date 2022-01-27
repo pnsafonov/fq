@@ -1,0 +1,10 @@
+$ fq -d kaitai -o source=@formats/params_pass_array_int.ksy "d,tovalue" src/position_to_end.bin
+{
+  "pass_ints.nums.size": 3,
+  "pass_ints.nums[0]": 513,
+  "pass_ints.nums[1]": 1027,
+  "pass_ints.nums[2]": 1541,
+  "pass_ints_calc.nums.size": 2,
+  "pass_ints_calc.nums[0]": 27643,
+  "pass_ints_calc.nums[1]": 7
+}

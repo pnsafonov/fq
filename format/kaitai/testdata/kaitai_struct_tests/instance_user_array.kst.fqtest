@@ -1,0 +1,13 @@
+$ fq -d kaitai -o source=@formats/instance_user_array.ksy "d,tovalue" src/instance_std_array.bin
+{
+  "entry_size": 4,
+  "ofs": 16,
+  "qty_entries": 3,
+  "user_entries.size": 3,
+  "user_entries[0].word1": 4369,
+  "user_entries[0].word2": 4369,
+  "user_entries[1].word1": 8738,
+  "user_entries[1].word2": 8738,
+  "user_entries[2].word1": 13107,
+  "user_entries[2].word2": 13107
+}

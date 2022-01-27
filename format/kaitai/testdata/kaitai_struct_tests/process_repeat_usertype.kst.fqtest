@@ -1,0 +1,7 @@
+$ fq -d kaitai -o source=@formats/process_repeat_usertype.ksy "d,tovalue" src/process_xor_4.bin
+{
+  "blocks[0].a": -1975704206,
+  "blocks[0].b": 20,
+  "blocks[1].a": 279597642,
+  "blocks[1].b": 68
+}

@@ -1,0 +1,7 @@
+$ fq -d kaitai -o source=@formats/default_bit_endian_mod.ksy "d,tovalue" src/fixed_struct.bin
+{
+  "main.nest.two": 11595,
+  "main.nest_be.two": 12799,
+  "main.one": 336,
+  "main.two": 8608
+}

@@ -1,0 +1,2 @@
+$ fq -d kaitai -o source=@formats/eof_exception_bytes.ksy "d,tovalue" src/term_strz.bin
+{}

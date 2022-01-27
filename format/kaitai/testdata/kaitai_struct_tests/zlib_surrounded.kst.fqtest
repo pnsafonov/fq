@@ -1,0 +1,4 @@
+$ fq -d kaitai -o source=@formats/zlib_surrounded.ksy "d,tovalue" src/zlib_surrounded.bin
+{
+  "zlib.num": -1
+}

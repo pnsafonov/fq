@@ -1,0 +1,5 @@
+$ fq -d kaitai -o source=@formats/nested_type_param.ksy "d,tovalue" src/term_strz.bin
+{
+  "main_seq.body": "foo|b",
+  "main_seq.my_len": 5
+}

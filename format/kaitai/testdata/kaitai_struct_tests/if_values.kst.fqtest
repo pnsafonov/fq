@@ -1,0 +1,9 @@
+$ fq -d kaitai -o source=@formats/if_values.ksy "d,tovalue" src/fixed_struct.bin
+{
+  "codes[0].half_opcode": 40,
+  "codes[0].opcode": 80,
+  "codes[1].half_opcode": "null",
+  "codes[1].opcode": 65,
+  "codes[2].half_opcode": "null",
+  "codes[2].opcode": 67
+}

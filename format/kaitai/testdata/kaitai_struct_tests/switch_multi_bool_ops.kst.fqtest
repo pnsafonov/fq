@@ -1,0 +1,12 @@
+$ fq -d kaitai -o source=@formats/switch_multi_bool_ops.ksy "d,tovalue" src/switch_integers.bin
+{
+  "opcodes.size": 4,
+  "opcodes[0].body": 7,
+  "opcodes[0].code": 1,
+  "opcodes[1].body": 16448,
+  "opcodes[1].code": 2,
+  "opcodes[2].body": 4919,
+  "opcodes[2].code": 4,
+  "opcodes[3].body": 4919,
+  "opcodes[3].code": 8
+}

@@ -1,0 +1,16 @@
+$ fq -d kaitai -o source=@formats/expr_bits.ksy "d,tovalue" src/switch_opcodes.bin
+{
+  "a": 2,
+  "byte_size": [
+    102,
+    111
+  ],
+  "enum_inst": "expr_bits::items::bar",
+  "enum_seq": "expr_bits::items::foo",
+  "inst_pos": 111,
+  "repeat_expr.size": 2,
+  "repeat_expr[0]": 111,
+  "repeat_expr[1]": 98,
+  "switch_on_endian.foo": 29184,
+  "switch_on_type": 97
+}

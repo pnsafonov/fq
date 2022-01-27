@@ -1,0 +1,10 @@
+$ fq -d kaitai -o source=@formats/buffered_struct.ksy "d,tovalue" src/buffered_struct.bin
+{
+  "block1.number1": 66,
+  "block1.number2": 67,
+  "block2.number1": 68,
+  "block2.number2": 69,
+  "finisher": 238,
+  "len1": 16,
+  "len2": 8
+}

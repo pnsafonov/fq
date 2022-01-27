@@ -1,0 +1,25 @@
+$ fq -d kaitai -o source=@formats/instance_std_array.ksy "d,tovalue" src/instance_std_array.bin
+{
+  "entries.size": 3,
+  "entries[0]": [
+    17,
+    17,
+    17,
+    17
+  ],
+  "entries[1]": [
+    34,
+    34,
+    34,
+    34
+  ],
+  "entries[2]": [
+    51,
+    51,
+    51,
+    51
+  ],
+  "entry_size": 4,
+  "ofs": 16,
+  "qty_entries": 3
+}

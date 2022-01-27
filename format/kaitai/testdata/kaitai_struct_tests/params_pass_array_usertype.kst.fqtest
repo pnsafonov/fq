@@ -1,0 +1,13 @@
+$ fq -d kaitai -o source=@formats/params_pass_array_usertype.ksy "d,tovalue" src/position_to_end.bin
+{
+  "pass_blocks.bar.size": 2,
+  "pass_blocks.bar[0].foo": 1,
+  "pass_blocks.bar[1].foo": 2,
+  "pass_blocks.one": [
+    3
+  ],
+  "pass_blocks.two": [
+    4,
+    5
+  ]
+}

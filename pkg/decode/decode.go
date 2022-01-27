@@ -28,6 +28,17 @@ const (
 	LittleEndian
 )
 
+func (e Endian) String() string {
+	switch e {
+	case BigEndian:
+		return "big-endian"
+	case LittleEndian:
+		return "little-endian"
+	default:
+		return "unknown-endian"
+	}
+}
+
 type Options struct {
 	Name          string
 	Description   string
@@ -164,10 +175,15 @@ func decode(ctx context.Context, br bitio.ReaderAtSeeker, group Group, opts Opti
 }
 
 type D struct {
-	Ctx     context.Context
-	Endian  Endian
-	Value   *Value
-	Options Options
+	Ctx       context.Context
+	Endian    Endian
+	BitEndian Endian
+	Value     *Value
+	Options   Options
+
+	bitEndianCurrent Endian
+	bitEndianBuf     byte
+	bitEndianBufLen  int
 
 	bitBuf bitio.ReaderAtSeeker
 
@@ -676,6 +692,27 @@ func (d *D) BitsLeft() int64 {
 	return bBitsLeft
 }
 
+func (d *D) TryBitEndianAlign() error {
+	// reset bit-endian buffer and seek to start of next byte
+	d.bitEndianBufLen = 0
+	a, err := d.TryAlignBits(8)
+	if err != nil {
+		return err
+	}
+	if a != 0 {
+		if _, err := d.TrySeekRel(int64(a)); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (d *D) BitEndianAlign() {
+	if err := d.TryBitEndianAlign(); err != nil {
+		panic(IOError{Err: err, Op: "BitEndianAlign", ReadSize: 0, Pos: d.Pos()})
+	}
+}
+
 // AlignBits number of bits to next nBits align
 func (d *D) TryAlignBits(nBits int) (int, error) {
 	bPos, err := d.TryPos()
@@ -814,9 +851,25 @@ func (d *D) FieldGet(name string) *Value {
 			return nil
 		}
 	default:
-		panic(fmt.Sprintf("%s is not a struct", d.Value.Name))
+		panic(fmt.Sprintf("%s is not a compound", d.Value.Name))
 	}
 	return nil
+}
+
+func (d *D) FieldIndex(index int) *Value {
+	switch fv := d.Value.V.(type) {
+	case *Compound:
+		if !fv.IsArray {
+			panic(fmt.Sprintf("%s is not an array", d.Value.Name))
+		}
+
+		if index < 0 {
+			index = len(fv.Children) + index
+		}
+		return fv.Children[index]
+	default:
+		panic(fmt.Sprintf("%s is not a compound", d.Value.Name))
+	}
 }
 
 func (d *D) FieldMustGet(name string) *Value {
@@ -919,6 +972,20 @@ func (d *D) FramedFn(nBits int64, fn func(d *D)) int64 {
 	decodeLen := d.RangeFn(d.Pos(), nBits, fn)
 	d.SeekRel(nBits)
 	return decodeLen
+}
+
+// TODO: hack
+func (d *D) FramedLen(nBits int64) *D {
+	if nBits < 0 {
+		d.Fatalf("%d nBits < 0", nBits)
+	}
+	var sd *D
+	d.RangeFn(d.Pos(), nBits, func(d *D) {
+		sd = d
+	})
+	d.SeekRel(nBits)
+
+	return sd
 }
 
 // LimitedFn decode from current position nBits forward. When done position will after last bit decoded.
@@ -1222,12 +1289,53 @@ func (d *D) FieldReaderRangeFormat(name string, startBit int64, nBits int64, fn 
 }
 
 func (d *D) TryFieldValue(name string, fn func() (*Value, error)) (*Value, error) {
+
+	bbLenStart := d.bitEndianBufLen
 	start := d.Pos()
 	v, err := fn()
+	bbLenStop := d.bitEndianBufLen
 	stop := d.Pos()
+
+	_ = bbLenStart
+	_ = bbLenStop
+
+	l := stop - start
+
+	/*
+
+		log.Printf("l: %#+v %d-%d bb %d-%d\n", l, start, stop, bbLenStart, bbLenStop)
+
+		if bbLenStart > 0 || bbLenStop > 0 {
+			// if l <= 8 {
+			if l > 0 {
+				start += int64(bbLenStop)
+			} else {
+				start -= 8 - int64(bbLenStop)
+				stop -= 8 - int64(bbLenStart)
+			}
+			// } else {
+
+			// }
+		}
+
+		l = stop - start
+
+		log.Printf("  -> %#+v %d-%d bb %d-%d\n", l, start, stop, bbLenStart, bbLenStop)
+
+		if start > stop {
+			panic("start > stop")
+		}
+		if start < 0 {
+			panic("start < 0")
+		}
+		if stop < 0 {
+			panic("stop < 0")
+		}
+	*/
+
 	v.Name = name
 	v.RootReader = d.bitBuf
-	v.Range = ranges.Range{Start: start, Len: stop - start}
+	v.Range = ranges.Range{Start: start, Len: l}
 	if err != nil {
 		return nil, err
 	}

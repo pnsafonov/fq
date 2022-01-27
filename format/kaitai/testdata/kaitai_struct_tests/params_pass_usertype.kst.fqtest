@@ -1,0 +1,7 @@
+$ fq -d kaitai -o source=@formats/params_pass_usertype.ksy "d,tovalue" src/position_in_seq.bin
+{
+  "first.foo": 1,
+  "one.buf": [
+    2
+  ]
+}

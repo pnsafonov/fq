@@ -12,9 +12,11 @@
             "env": {},
             "args": [
                 "-d",
-                "mp4",
-                ".",
-                "file"
+                "kaitai",
+                "-o",
+                "source=@format/kaitai/testdata/png.ksy",
+                "d",
+                "format/png/testdata/4x4.png"
             ],
         }
     ]

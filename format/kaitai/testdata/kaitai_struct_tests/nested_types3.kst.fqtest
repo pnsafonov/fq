@@ -1,0 +1,8 @@
+$ fq -d kaitai -o source=@formats/nested_types3.ksy "d,tovalue" src/fixed_struct.bin
+{
+  "a_c_d.value_d": 65,
+  "a_cc.value_cc": 80,
+  "b.a_c_d.value_d": 45,
+  "b.a_cc.value_cc": 75,
+  "b.value_b": 67
+}

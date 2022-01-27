@@ -1,0 +1,19 @@
+$ fq -d kaitai -o source=@formats/expr_bytes_ops.ksy "d,tovalue" src/nav_parent_switch.bin
+{
+  "one_first": 1,
+  "one_last": 255,
+  "one_last.to_s": "255",
+  "one_max": 255,
+  "one_max.to_s": "255",
+  "one_mid": 66,
+  "one_min": 1,
+  "one_size": 3,
+  "two_first": 65,
+  "two_last": 75,
+  "two_max": 255,
+  "two_max.to_s": "255",
+  "two_mid": 255,
+  "two_mid.to_s": "255",
+  "two_min": 65,
+  "two_size": 3
+}

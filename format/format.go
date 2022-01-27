@@ -90,6 +90,7 @@ const (
 	JPEG                = "jpeg"
 	JSON                = "json"
 	JSONL               = "jsonl"
+	KAITAI              = "kaitai"
 	MACHO               = "macho"
 	MACHO_FAT           = "macho_fat"
 	MARKDOWN            = "markdown"
@@ -340,4 +341,8 @@ type BitCoinBlockIn struct {
 
 type TLSIn struct {
 	Keylog string `doc:"NSS Key Log content"`
+}
+
+type KaitaiIn struct {
+	Source string `doc:"ksy source"`
 }

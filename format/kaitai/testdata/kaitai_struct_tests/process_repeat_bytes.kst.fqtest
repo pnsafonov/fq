@@ -1,0 +1,17 @@
+$ fq -d kaitai -o source=@formats/process_repeat_bytes.ksy "d,tovalue" src/process_xor_4.bin
+{
+  "bufs[0]": [
+    114,
+    37,
+    61,
+    138,
+    20
+  ],
+  "bufs[1]": [
+    74,
+    82,
+    170,
+    16,
+    68
+  ]
+}

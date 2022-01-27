@@ -1,0 +1,16 @@
+$ fq -d kaitai -o source=@formats/type_ternary_2nd_falsy.ksy "d,tovalue" src/switch_integers.bin
+{
+  "int_array.size": 2,
+  "ut.m": 7,
+  "v_false": false,
+  "v_float_neg_zero": "-0.0",
+  "v_float_zero": 0,
+  "v_int_array_empty.size": 0,
+  "v_int_neg_zero": "-0",
+  "v_int_zero": 0,
+  "v_null_ut": "null",
+  "v_str_empty": "\"\"",
+  "v_str_empty.length": 0,
+  "v_str_w_zero": "0",
+  "v_str_w_zero.length": 1
+}

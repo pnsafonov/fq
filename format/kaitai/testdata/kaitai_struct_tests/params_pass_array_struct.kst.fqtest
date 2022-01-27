@@ -1,0 +1,6 @@
+$ fq -d kaitai -o source=@formats/params_pass_array_struct.ksy "d,tovalue" src/position_to_end.bin
+{
+  "pass_structs.structs.size": 2,
+  "pass_structs.structs[0].as<params_pass_array_struct::foo>.f": 1,
+  "pass_structs.structs[1].as<params_pass_array_struct::bar>.b": 2
+}

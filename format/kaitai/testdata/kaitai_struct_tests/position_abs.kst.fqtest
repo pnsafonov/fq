@@ -1,0 +1,5 @@
+$ fq -d kaitai -o source=@formats/position_abs.ksy "d,tovalue" src/position_abs.bin
+{
+  "index.entry": "foo",
+  "index_offset": 32
+}

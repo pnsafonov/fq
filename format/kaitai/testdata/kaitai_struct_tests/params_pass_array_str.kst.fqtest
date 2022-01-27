@@ -1,0 +1,10 @@
+$ fq -d kaitai -o source=@formats/params_pass_array_str.ksy "d,tovalue" src/term_strz.bin
+{
+  "pass_str_array.strs.size": 3,
+  "pass_str_array.strs[0]": "fo",
+  "pass_str_array.strs[1]": "o|",
+  "pass_str_array.strs[2]": "ba",
+  "pass_str_array_calc.strs.size": 2,
+  "pass_str_array_calc.strs[0]": "aB",
+  "pass_str_array_calc.strs[1]": "Cd"
+}

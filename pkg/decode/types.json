@@ -87,11 +87,32 @@
             "type": "Bool", 
             "variants": [
                 {
-                    "name"  : ""             , 
-                    "args"  : ""             , 
-                    "params": ""             , 
-                    "call"  : "d.tryBool()"  , 
-                    "doc"   : "1 bit boolean"  
+                    "name"  : ""                   , 
+                    "args"  : ""                   , 
+                    "params": ""                   , 
+                    "call"  : "d.tryBool(d.Endian)", 
+                    "doc"   : "1 bit boolean"        
+                }, 
+                {
+                    "name"  : "E"                                    , 
+                    "args"  : "endian"                               , 
+                    "params": "endian Endian"                        , 
+                    "call"  : "d.tryBool(endian)"                    , 
+                    "doc"   : "1 bit boolean in specified bit-endian"  
+                }, 
+                {
+                    "name"  : "LE"                             , 
+                    "args"  : ""                               , 
+                    "params": ""                               , 
+                    "call"  : "d.tryBool(d.Endian)"            , 
+                    "doc"   : "1 bit boolean bit-little-endian"  
+                }, 
+                {
+                    "name"  : "BE"                          , 
+                    "args"  : ""                            , 
+                    "params": ""                            , 
+                    "call"  : "d.tryBool(d.Endian)"         , 
+                    "doc"   : "1 bit boolean bit-big-endian"  
                 }
             ]
         }, 

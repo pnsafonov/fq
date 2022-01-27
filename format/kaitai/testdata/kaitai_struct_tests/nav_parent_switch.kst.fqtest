@@ -1,0 +1,6 @@
+$ fq -d kaitai -o source=@formats/nav_parent_switch.ksy "d,tovalue" src/nav_parent_switch.bin
+{
+  "category": 1,
+  "content.as<nav_parent_switch::element_1>.foo": 66,
+  "content.as<nav_parent_switch::element_1>.subelement.bar": 255
+}

@@ -1,0 +1,8 @@
+$ fq -d kaitai -o source=@formats/switch_manual_enum_invalid_else.ksy "d,tovalue" src/enum_negative.bin
+{
+  "opcodes.size": 2,
+  "opcodes[0].body.as<switch_manual_enum_invalid_else::opcode::defval>.value": 123,
+  "opcodes[0].code": 255,
+  "opcodes[1].body.as<switch_manual_enum_invalid_else::opcode::defval>.value": 123,
+  "opcodes[1].code": 1
+}

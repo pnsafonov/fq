@@ -1,0 +1,13 @@
+$ fq -d kaitai -o source=@formats/nav_parent2.ksy "d,tovalue" src/nav_parent2.bin
+{
+  "num_tags": 2,
+  "ofs_tags": 8,
+  "tags[0].name": "RAHC",
+  "tags[0].num_items": 3,
+  "tags[0].ofs": 32,
+  "tags[0].tag_content.content": "foo",
+  "tags[1].name": "RAHC",
+  "tags[1].num_items": 6,
+  "tags[1].ofs": 35,
+  "tags[1].tag_content.content": "barbaz"
+}

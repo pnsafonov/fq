@@ -1,0 +1,10 @@
+$ fq -d kaitai -o source=@formats/repeat_until_calc_array_type.ksy "d,tovalue" src/repeat_until_process.bin
+{
+  "records.size": 3,
+  "records[0].body": 2863311546,
+  "records[0].marker": 232,
+  "records[1].body": 2863315102,
+  "records[1].marker": 250,
+  "records[2].body": 1431655765,
+  "records[2].marker": 170
+}

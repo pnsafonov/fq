@@ -65,6 +65,7 @@ var (
 	Ether8023Frame     = &decode.Group{Name: "ether8023_frame"}
 	Exif               = &decode.Group{Name: "exif"}
 	FairplaySpc        = &decode.Group{Name: "fairplay_spc"}
+	Fit                = &decode.Group{Name: "fit"}
 	Flac               = &decode.Group{Name: "flac"}
 	FlacFrame          = &decode.Group{Name: "flac_frame"}
 	FlacMetadatablock  = &decode.Group{Name: "flac_metadatablock"}

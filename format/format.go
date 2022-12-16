@@ -108,6 +108,10 @@ var (
 	MpegPesPacket      = &decode.Group{Name: "mpeg_pes_packet"}
 	MpegSpu            = &decode.Group{Name: "mpeg_spu"}
 	MpegTs             = &decode.Group{Name: "mpeg_ts"}
+	MpegTsPacket       = &decode.Group{Name: "mpeg_ts_packet"}
+	MpegTsPat          = &decode.Group{Name: "mpeg_ts_pat"}
+	MpegTsPmt          = &decode.Group{Name: "mpeg_ts_pmt"}
+	MpegTsSdt          = &decode.Group{Name: "mpeg_ts_sdt"}
 	Msgpack            = &decode.Group{Name: "msgpack"}
 	Ogg                = &decode.Group{Name: "ogg"}
 	OggPage            = &decode.Group{Name: "ogg_page"}
@@ -340,4 +344,35 @@ type BitCoinBlockIn struct {
 
 type TLSIn struct {
 	Keylog string `doc:"NSS Key Log content"`
+}
+type MpegTsStream struct {
+	ProgramPid int
+	Type       int
+}
+
+type MpegTsProgram struct {
+	Number     int
+	Pid        int
+	StreamPids []int
+}
+
+type MpegTsPacketIn struct {
+	ProgramMap map[int]MpegTsProgram
+	StreamMap  map[int]MpegTsStream
+}
+
+type MpegTsPacketOut struct {
+	Pid                        int
+	ContinuityCounter          int
+	TransportScramblingControl int
+	PayloadUnitStart           bool
+	Payload                    []byte
+}
+
+type MpegTsPatOut struct {
+	PidMap map[int]int // pid to program number that has pmt
+}
+
+type MpegTsPmtOut struct {
+	Streams map[int]MpegTsStream
 }

@@ -104,6 +104,8 @@ var (
 	Mp4                = &decode.Group{Name: "mp4"}
 	MpegAsc            = &decode.Group{Name: "mpeg_asc"}
 	MpegEs             = &decode.Group{Name: "mpeg_es"}
+	MpegItuT35         = &decode.Group{Name: "mpeg_itu_t35"}
+	MpegCcData         = &decode.Group{Name: "mpeg_cc_data"}
 	MpegPes            = &decode.Group{Name: "mpeg_pes"}
 	MpegPesPacket      = &decode.Group{Name: "mpeg_pes_packet"}
 	MpegSpu            = &decode.Group{Name: "mpeg_spu"}

@@ -329,9 +329,13 @@ type HTMLIn struct {
 	AttributePrefix string `doc:"Prefix for attribute keys"`
 }
 
-type CSVLIn struct {
-	Comma   string `doc:"Separator character"`
-	Comment string `doc:"Comment line character"`
+type CSVIn struct {
+	Comma            string `doc:"Alias for Delimiter"`
+	Delimiter        string `doc:"Field delimiter character"`
+	Comment          string `doc:"Comment line character"`
+	QuoteChar        string `doc:"Quote character"`
+	Header           bool   `doc:"Convert to objects based on header"`
+	SkipInitialSpace bool   `doc:"Don't include leading whitespace"`
 }
 
 type BitCoinBlockIn struct {

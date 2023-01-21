@@ -345,6 +345,10 @@ type BitCoinBlockIn struct {
 type TLSIn struct {
 	Keylog string `doc:"NSS Key Log content"`
 }
+type MpegTsIn struct {
+	MaxSyncSeek int `doc:"Max byte distance to next sync"`
+}
+
 type MpegTsStream struct {
 	ProgramPid int
 	Type       int
@@ -357,12 +361,14 @@ type MpegTsProgram struct {
 }
 
 type MpegTsPacketIn struct {
-	ProgramMap map[int]MpegTsProgram
-	StreamMap  map[int]MpegTsStream
+	ProgramMap    map[int]MpegTsProgram
+	StreamMap     map[int]MpegTsStream
+	ContinuityMap map[int]int
 }
 
 type MpegTsPacketOut struct {
 	Pid                        int
+	TransportErrorIndicator    bool
 	ContinuityCounter          int
 	TransportScramblingControl int
 	PayloadUnitStart           bool

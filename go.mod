@@ -2,12 +2,8 @@ module github.com/wader/fq
 
 go 1.18
 
-require (
-	// fork of github.com/itchyny/gojq, see github.com/wader/gojq fq branch
-	github.com/wader/gojq v0.12.1-0.20230308145020-2de2194791c0
-	// fork of github.com/chzyer/readline, see github.com/wader/readline fq branch
-	github.com/wader/readline v0.0.0-20230307172220-bcb7158e7448
-)
+// fork of github.com/itchyny/gojq, see github.com/wader/gojq fq branch
+require github.com/wader/gojq v0.12.1-0.20230308145020-2de2194791c0
 
 require (
 	// bump: gomod-BurntSushi/toml /github\.com\/BurntSushi\/toml v(.*)/ https://github.com/BurntSushi/toml.git|^1
@@ -19,6 +15,7 @@ require (
 	// bump: gomod-creasty-defaults command go get -d github.com/creasty/defaults@v$LATEST && go mod tidy
 	// bump: gomod-creasty-defaults link "Source diff $CURRENT..$LATEST" https://github.com/creasty/defaults/compare/v$CURRENT..v$LATEST
 	github.com/creasty/defaults v1.7.0
+	github.com/ergochat/readline v0.0.3
 
 	// bump: gomod-golang-snappy /github\.com\/golang\/snappy v(.*)/ https://github.com/golang/snappy.git|^0
 	// bump: gomod-golang-snappy command go get -d github.com/golang/snappy@v$LATEST && go mod tidy
@@ -62,6 +59,7 @@ require (
 	// bump: gomod-golang-x-net command go get -d golang.org/x/net@v$LATEST && go mod tidy
 	// bump: gomod-golang-x-net link "Tags" https://github.com/golang/net/tags
 	golang.org/x/net v0.9.0
+	golang.org/x/term v0.7.0
 
 	// bump: gomod-golang/text /golang\.org\/x\/text v(.*)/ https://github.com/golang/text.git|^0
 	// bump: gomod-golang/text command go get -d golang.org/x/text@v$LATEST && go mod tidy

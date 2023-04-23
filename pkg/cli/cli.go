@@ -13,9 +13,11 @@ import (
 	"path/filepath"
 	"runtime"
 
+	"github.com/wader/fq/internal/mathex"
 	"github.com/wader/fq/pkg/interp"
+	"golang.org/x/term"
 
-	"github.com/wader/readline"
+	"github.com/ergochat/readline"
 )
 
 func maybeLogFile() {
@@ -88,11 +90,13 @@ func (stdOS) Platform() interp.Platform {
 type fdTerminal uintptr
 
 func (fd fdTerminal) Size() (int, int) {
-	w, h, _ := readline.GetSize(int(fd))
+	w, h, _ := term.GetSize(int(fd))
+	// TODO: old version return 0 on no terminal
+	w, h = mathex.Max(0, w), mathex.Max(0, h)
 	return w, h
 }
 func (fd fdTerminal) IsTerminal() bool {
-	return readline.IsTerminal(int(fd))
+	return term.IsTerminal(int(fd))
 }
 
 type stdinInput struct {
